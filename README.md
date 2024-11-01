@@ -122,10 +122,11 @@ A unique aspect of this chatbot is its ability to save and recall chat history, 
 The memory feature is implemented using LangChain's built-in memory management:
 
 ```
-from langchain.memory import ConversationBufferMemory
+from langgraph.checkpoint.sqlite import SqliteSaver
+from langgraph.checkpoint.memory import MemorySaver
 
-memory = ConversationBufferMemory()
-llm.memory = memory
+memory = SqliteSaver.from_conn_string(':memory:')
+graph = graph_builder.compile(checkpointer = MemorySaver()) # Adding Memory
 ```
 
 This memory stores the chat history and enables the chatbot to retrieve context when answering follow-up questions. For example:
