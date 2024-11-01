@@ -152,6 +152,10 @@ from IPython.display import Image, display
 display(Image(graph.get_graph().draw_mermaid_png()))
 ```
 
+## Graph
+
+![img]()
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
